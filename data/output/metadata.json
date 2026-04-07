@@ -1,0 +1,10 @@
+{
+  "project": "Vietnam Dengue Atlas",
+  "n_provinces": 63,
+  "years": [1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010],
+  "year_range": [1994, 2010],
+  "model": "BYM2 + RW1 (Poisson, INLA)",
+  "data_source": "OpenDengue V1.3",
+  "shapefile_source": "GADM 4.1",
+  "generated": "2026-04-07 21:43:20"
+}

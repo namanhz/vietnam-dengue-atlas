@@ -1,0 +1,25 @@
+# Raw data (large, downloaded programmatically)
+data/raw/
+
+# Large processed files
+*.rds
+*.rda
+*.RData
+
+# R environment
+.Rhistory
+.Rproj.user/
+renv/library/
+renv/staging/
+renv/sandbox/
+
+# INLA temporary files
+*.graph
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+*.Rproj

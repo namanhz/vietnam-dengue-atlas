@@ -1,0 +1,400 @@
+/* ============================================================================
+   Vietnam Dengue Atlas — Light Professional Theme
+   ============================================================================ */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-card: #ffffff;
+  --bg-hover: #f0f2f5;
+  --border: #d0d7de;
+  --border-light: #e8ecf0;
+  --text-primary: #1f2328;
+  --text-secondary: #656d76;
+  --text-muted: #8b949e;
+  --accent: #0969da;
+  --accent-dim: #ddf4ff;
+  --danger: #cf222e;
+  --warning: #bf8700;
+  --success: #1a7f37;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* ---------- Header Bar ---------- */
+.atlas-header {
+  background: #24292f;
+  padding: 0 16px;
+  height: 64px;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  overflow: visible;
+}
+
+.atlas-header .title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  letter-spacing: -0.3px;
+}
+
+.atlas-header .controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.atlas-header .method-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.atlas-header .method-btn:hover {
+  background: rgba(255,255,255,0.18);
+  color: #ffffff;
+}
+
+/* Header widget overrides (dark header, light inputs) */
+.atlas-header .form-control,
+.atlas-header .selectize-input {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  font-size: 13px !important;
+  height: 32px !important;
+}
+
+.atlas-header .selectize-input .item { color: #fff !important; }
+
+.atlas-header .selectize-dropdown {
+  background: #2d333b !important;
+  color: #e6edf3 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}
+.atlas-header .selectize-dropdown .active {
+  background: #0969da !important;
+  color: #fff !important;
+}
+
+.atlas-header .irs--shiny .irs-bar { background: #58a6ff; border-color: #58a6ff; }
+.atlas-header .irs--shiny .irs-handle { background: #fff; border-color: #58a6ff; }
+.atlas-header .irs--shiny .irs-line { background: rgba(255,255,255,0.2); }
+.atlas-header .irs--shiny .irs-min,
+.atlas-header .irs--shiny .irs-max,
+.atlas-header .irs--shiny .irs-single,
+.atlas-header .irs--shiny .irs-from,
+.atlas-header .irs--shiny .irs-to {
+  background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); font-size: 11px;
+}
+.atlas-header .irs--shiny .irs-grid-text { color: rgba(255,255,255,0.4); font-size: 10px; }
+
+.atlas-header label.control-label { display: none !important; }
+
+/* ---------- Main Layout ---------- */
+.atlas-body {
+  display: flex;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.map-container {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.detail-panel {
+  width: 360px;
+  min-width: 360px;
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ---------- Map ---------- */
+.map-container .leaflet-container {
+  background: var(--bg-secondary) !important;
+}
+
+.leaflet .legend {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  font-size: 11px;
+}
+
+/* ---------- Detail Panel ---------- */
+.detail-panel .placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 40px;
+}
+
+.detail-panel .placeholder .icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.detail-panel .prov-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+}
+
+.detail-panel .prov-header .name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 2px 0;
+}
+
+.detail-panel .prov-header .subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* SIR card */
+.sir-card {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sir-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.sir-ci {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.evidence-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.evidence-elevated { background: #ffebe9; color: #cf222e; }
+.evidence-likely-elevated { background: #fff8c5; color: #9a6700; }
+.evidence-neutral { background: #f0f2f5; color: #656d76; }
+.evidence-likely-lower { background: #ddf4ff; color: #0550ae; }
+.evidence-lower { background: #dafbe1; color: #116329; }
+
+/* Gradient bar */
+.gradient-section {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.gradient-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.gradient-bar {
+  position: relative;
+  height: 14px;
+  border-radius: 7px;
+  background: linear-gradient(to right, #2166AC, #67A9CF, #D1E5F0, #FDDBC7, #EF8A62, #B2182B);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.gradient-marker {
+  position: absolute;
+  top: -4px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 9px solid var(--text-primary);
+}
+
+.gradient-caption {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Time series section */
+.ts-section {
+  padding: 12px 16px 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* Stats table */
+.stats-section {
+  padding: 12px 16px;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-table tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.stats-table tr:last-child { border-bottom: none; }
+
+.stats-table td {
+  padding: 6px 0;
+  font-size: 13px;
+}
+
+.stats-table td:first-child {
+  color: var(--text-secondary);
+}
+
+.stats-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Shiny Widget Overrides (body) ---------- */
+.shiny-input-container { margin-bottom: 0 !important; }
+
+body > .form-control,
+body > .selectize-input {
+  border-radius: 6px !important;
+  font-size: 13px !important;
+}
+
+/* Plotly hide toolbar */
+.js-plotly-plot .plotly .modebar { display: none !important; }
+
+label.control-label {
+  color: var(--text-secondary) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+/* ---------- Modal ---------- */
+.modal-content {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 24px;
+}
+
+.modal-header .modal-title { font-weight: 700; font-size: 18px; }
+
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 24px 32px;
+  line-height: 1.7;
+}
+
+.modal-body h1, .modal-body h2, .modal-body h3 {
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 6px;
+  margin-top: 28px;
+}
+
+.modal-body h1 { font-size: 22px; }
+.modal-body h2 { font-size: 18px; }
+.modal-body h3 { font-size: 15px; }
+
+.modal-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+.modal-body th, .modal-body td {
+  padding: 6px 10px;
+  border: 1px solid var(--border-light);
+  font-size: 13px;
+}
+
+.modal-body th {
+  background: var(--bg-secondary);
+  font-weight: 600;
+}
+
+.modal-body code {
+  background: var(--bg-secondary);
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.modal-footer { border-top: 1px solid var(--border-light); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .atlas-body { flex-direction: column; }
+  .detail-panel { width: 100%; min-width: unset; height: 50vh; border-left: none; border-top: 1px solid var(--border); }
+}

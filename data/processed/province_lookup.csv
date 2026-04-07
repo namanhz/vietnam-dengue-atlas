@@ -1,0 +1,64 @@
+opendengue_name,gadm_name,gadm_gid,gadm_varname,gadm_type,method
+AN GIANG,An Giang,VNM.1_1,An Giang,Tỉnh,exact
+BA RIA-VUNG TAU,Bà Rịa - Vũng Tàu,VNM.7_1,Ba Ria - Vung Tau,Tỉnh,exact
+BAC GIANG,Bắc Giang,VNM.3_1,Bac Giang,Tỉnh,exact
+BAC KAN,Bắc Kạn,VNM.4_1,Bac Kan,Tỉnh,exact
+BAC LIEU,Bạc Liêu,VNM.2_1,Bac Lieu,Tỉnh,exact
+BAC NINH,Bắc Ninh,VNM.5_1,Bac Ninh,Tỉnh,exact
+BEN TRE,Bến Tre,VNM.6_1,Ben Tre,Tỉnh,exact
+BINH DINH,Bình Định,VNM.8_1,Binh Dinh,Tỉnh,exact
+BINH DUONG,Bình Dương,VNM.9_1,Binh Duong,Tỉnh,exact
+BINH PHUOC,Bình Phước,VNM.10_1,Binh Phuoc,Tỉnh,exact
+BINH THUAN,Bình Thuận,VNM.11_1,Binh Thuan,Tỉnh,exact
+CA MAU,Cà Mau,VNM.13_1,Ca Mau,Tỉnh,exact
+CAN THO,Cần Thơ,VNM.12_1,Can Tho,Thành phố,exact
+CAO BANG,Cao Bằng,VNM.14_1,Cao Bang,Tỉnh,exact
+DA NANG,Đà Nẵng,VNM.19_1,Da Nang,Thành phố,exact
+DAK LAK,Đắk Lắk,VNM.15_1,Dak Lak,Tỉnh,exact
+DAK NONG,Đắk Nông,VNM.16_1,Dak Nong,Tỉnh,exact
+DIEN BIEN,Điện Biên,VNM.20_1,Dien Bien,Tỉnh,exact
+DONG NAI,Đồng Nai,VNM.17_1,Dong Nai,Tỉnh,exact
+DONG THAP,Đồng Tháp,VNM.18_1,Dong Thap,Tỉnh,exact
+GIA LAI,Gia Lai,VNM.21_1,Gia Lai,Tỉnh,exact
+HA GIANG,Hà Giang,VNM.26_1,Ha Giang,Tỉnh,exact
+HA NAM,Hà Nam,VNM.28_1,Ha Nam,Tỉnh,exact
+HA NOI,Hà Nội,VNM.27_1,Ha Noi,Thành phố,exact
+HA TINH,Hà Tĩnh,VNM.29_1,Ha Tinh,Tỉnh,exact
+HAI DUONG,Hải Dương,VNM.22_1,Hai Duong,Tỉnh,exact
+HAI PHONG,Hải Phòng,VNM.23_1,Hai Phong,Thành phố,exact
+HAU GIANG,Hậu Giang,VNM.24_1,Hau Giang,Tỉnh,exact
+HO CHI MINH,Hồ Chí Minh,VNM.25_1,Ho Chi Minh,Thành phố,exact
+HOA BINH,Hoà Bình,VNM.30_1,Hoa Binh,Tỉnh,exact
+HUNG YEN,Hưng Yên,VNM.31_1,Hung Yen,Tỉnh,exact
+KHANH HOA,Khánh Hòa,VNM.32_1,Khanh Hoa,Tỉnh,exact
+KIEN GIANG,Kiên Giang,VNM.33_1,Kien Giang,Tỉnh,exact
+KON TUM,Kon Tum,VNM.34_1,Kon Tum,Tỉnh,exact
+LAI CHAU,Lai Châu,VNM.36_1,Lai Chau,Tỉnh,exact
+LAM DONG,Lâm Đồng,VNM.37_1,Lam Dong,Tỉnh,exact
+LANG SON,Lạng Sơn,VNM.35_1,Lang Son,Tỉnh,exact
+LAO CAI,Lào Cai,VNM.38_1,Lao Cai,Tỉnh,exact
+LONG AN,Long An,VNM.39_1,Long An,Tỉnh,exact
+NAM DINH,Nam Định,VNM.40_1,Nam Dinh,Tỉnh,exact
+NGHE AN,Nghệ An,VNM.41_1,Nghe An,Tỉnh,exact
+NINH BINH,Ninh Bình,VNM.42_1,Ninh Binh,Tỉnh,exact
+NINH THUAN,Ninh Thuận,VNM.43_1,Ninh Thuan,Tỉnh,exact
+PHU THO,Phú Thọ,VNM.44_1,Phu Tho,Tỉnh,exact
+PHU YEN,Phú Yên,VNM.45_1,Phu Yen,Tỉnh,exact
+QUANG BINH,Quảng Bình,VNM.46_1,Quang Binh,Tỉnh,exact
+QUANG NAM,Quảng Nam,VNM.47_1,Quang Nam,Tỉnh,exact
+QUANG NGAI,Quảng Ngãi,VNM.48_1,Quang Ngai,Tỉnh,exact
+QUANG NINH,Quảng Ninh,VNM.49_1,Quang Ninh,Tỉnh,exact
+QUANG TRI,Quảng Trị,VNM.50_1,Quang Tri,Tỉnh,exact
+SOC TRANG,Sóc Trăng,VNM.51_1,Soc Trang,Tỉnh,exact
+SON LA,Sơn La,VNM.52_1,Son La,Tỉnh,exact
+TAY NINH,Tây Ninh,VNM.53_1,Tay Ninh,Tỉnh,exact
+THAI BINH,Thái Bình,VNM.55_1,Thai Binh,Tỉnh,exact
+THAI NGUYEN,Thái Nguyên,VNM.56_1,Thai Nguyen,Tỉnh,exact
+THANH HOA,Thanh Hóa,VNM.57_1,Thanh Hoa,Tỉnh,exact
+THUA THIEN - HUE,Thừa Thiên Huế,VNM.54_1,Thua Thien Hue,Tỉnh,exact
+TIEN GIANG,Tiền Giang,VNM.58_1,Tien Giang,Tỉnh,exact
+TRA VINH,Trà Vinh,VNM.59_1,Tra Vinh,Tỉnh,exact
+TUYEN QUANG,Tuyên Quang,VNM.60_1,Tuyen Quang,Tỉnh,exact
+VINH LONG,Vĩnh Long,VNM.61_1,Vinh Long,Tỉnh,exact
+VINH PHUC,Vĩnh Phúc,VNM.62_1,Vinh Phuc,Tỉnh,exact
+YEN BAI,Yên Bái,VNM.63_1,Yen Bai,Tỉnh,exact
