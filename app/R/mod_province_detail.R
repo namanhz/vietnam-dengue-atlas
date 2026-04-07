@@ -132,7 +132,8 @@ mod_province_detail_server <- function(id, posteriors, selected_province, select
           line = list(color = "#0969da", width = 2),
           marker = list(color = "#0969da", size = 4),
           name = "SIR",
-          hovertemplate = "%{x}: SIR = %{y:.2f}<extra></extra>"
+          text = ~sprintf("SIR = %.2f", sir),
+          hoverinfo = "text"
         ) %>%
         add_segments(
           x = min(prov_data$year), xend = max(prov_data$year),
@@ -149,7 +150,9 @@ mod_province_detail_server <- function(id, posteriors, selected_province, select
           paper_bgcolor = "transparent",
           margin = list(l = 35, r = 5, t = 5, b = 25),
           showlegend = FALSE,
-          hovermode = "x unified"
+          hovermode = "closest",
+          hoverlabel = list(bgcolor = "#fff", bordercolor = "#d0d7de",
+                            font = list(color = "#1f2328", size = 12))
         ) %>%
         config(displayModeBar = FALSE)
     })

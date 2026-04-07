@@ -36,8 +36,8 @@ body {
 .atlas-header {
   background: #24292f;
   padding: 0 16px;
-  height: 64px;
-  padding-top: 10px;
+  height: 80px;
+  padding-top: 16px;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -114,10 +114,35 @@ body {
 
 .atlas-header label.control-label { display: none !important; }
 
+/* Hide default Shiny animate button */
+.atlas-header .slider-animate-container { display: none !important; }
+
+/* Custom play button */
+.play-btn {
+  background: rgba(255,255,255,0.15) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  line-height: 34px !important;
+  text-align: center !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.play-btn:hover {
+  background: rgba(255,255,255,0.25) !important;
+}
+
 /* ---------- Main Layout ---------- */
 .atlas-body {
   display: flex;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 80px);
   overflow: hidden;
 }
 
@@ -139,6 +164,11 @@ body {
 /* ---------- Map ---------- */
 .map-container .leaflet-container {
   background: var(--bg-secondary) !important;
+}
+
+/* Smooth fill transition when colors update in-place */
+.leaflet-interactive {
+  transition: fill 0.4s ease, fill-opacity 0.3s ease;
 }
 
 .leaflet .legend {
@@ -277,6 +307,10 @@ body {
   letter-spacing: 0.5px;
   color: var(--text-muted);
   margin-bottom: 6px;
+}
+
+.ts-section .plotly, .ts-section .plot-container {
+  overflow: visible !important;
 }
 
 /* Stats table */

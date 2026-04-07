@@ -74,7 +74,6 @@ mod_map_server <- function(id, geo, posteriors, current_data,
       ) %>% lapply(htmltools::HTML)
 
       leafletProxy(ns("map")) %>%
-        clearShapes() %>%
         clearControls() %>%
         addPolygons(
           data = geo_data,

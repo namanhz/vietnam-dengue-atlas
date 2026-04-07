@@ -36,7 +36,16 @@ source("R/mod_province_detail.R")
 # --------------------------------------------------------------------------
 ui <- fluidPage(
   tags$head(
-    tags$link(rel = "stylesheet", href = "style.css")
+    tags$link(rel = "stylesheet", href = "style.css"),
+    tags$script(HTML("
+      Shiny.addCustomMessageHandler('togglePlayIcon', function(state) {
+        var btn = document.getElementById('play_btn');
+        var icon = btn.querySelector('i');
+        if (icon) {
+          icon.className = state === 'pause' ? 'fa fa-pause' : 'fa fa-play';
+        }
+      });
+    "))
   ),
 
   # Header bar
@@ -51,15 +60,20 @@ ui <- fluidPage(
                       "Smoothed Incidence" = "incidence_smoothed"),
           selected = "sir", width = "100%")
       ),
-      tags$div(style = "flex: 1; min-width: 200px; max-width: 500px;",
-        sliderInput("year", NULL,
-          min = min(years), max = max(years), value = max(years),
-          step = 1, sep = "", width = "100%",
-          animate = animationOptions(interval = 800))
+      tags$div(style = "display: flex; align-items: center; gap: 8px; flex: 1; min-width: 200px; max-width: 550px;",
+        actionButton("play_btn", NULL, icon = icon("play"), class = "play-btn"),
+        tags$div(style = "flex: 1;",
+          sliderInput("year", NULL,
+            min = min(years), max = max(years), value = max(years),
+            step = 1, sep = "", width = "100%")
+        )
       )
     ),
     actionButton("show_method", "Methodology", class = "method-btn",
-                 icon = icon("book"))
+                 icon = icon("book")),
+    tags$a(href = "https://github.com/namanhz/vietnam-dengue-atlas",
+           target = "_blank", class = "method-btn",
+           icon("github"), "GitHub")
   ),
 
   # Body: map + detail panel
@@ -79,6 +93,32 @@ ui <- fluidPage(
 server <- function(input, output, session) {
 
   selected_province <- reactiveVal(NULL)
+
+  # Custom play/pause animation
+  playing <- reactiveVal(FALSE)
+  anim_timer <- reactiveVal(NULL)
+
+  observeEvent(input$play_btn, {
+    if (playing()) {
+      playing(FALSE)
+      session$sendCustomMessage("togglePlayIcon", "play")
+    } else {
+      playing(TRUE)
+      session$sendCustomMessage("togglePlayIcon", "pause")
+    }
+  })
+
+  observe({
+    if (playing()) {
+      invalidateLater(1200, session)
+      yr <- isolate(input$year)
+      next_yr <- yr + 1
+      if (next_yr > max(years)) {
+        next_yr <- min(years)
+      }
+      updateSliderInput(session, "year", value = next_yr)
+    }
+  })
 
   current_data <- reactive({
     posteriors %>% filter(year == input$year)
