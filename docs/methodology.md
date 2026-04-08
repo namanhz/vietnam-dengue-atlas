@@ -8,9 +8,12 @@ The Vietnam Dengue Atlas presents Bayesian spatiotemporal estimates of dengue in
 
 ## Data Sources
 
-- **Dengue cases**: OpenDengue database V1.3 (Clarke et al., 2024). Reported dengue case counts by province and year.
-- **Population**: Vietnam General Statistics Office (GSO) census and statistical yearbook data, with intercensal interpolation.
+- **Dengue cases (1994-2010)**: OpenDengue database V1.3 (Clarke et al., 2024). Monthly province-level case counts from passive surveillance.
+- **Dengue cases (2011-2017)**: Vietnam General Department of Preventive Medicine (GDPM) Communicable Disease Yearbooks ("Nien giam"), parsed from official Excel publications (epix-project/gdpm, GitHub). Monthly province-level case counts.
+- **Population**: Vietnam General Statistics Office (GSO) census data (1999 and 2009 censuses) with province-specific intercensal growth rate interpolation and extrapolation.
 - **Administrative boundaries**: GADM version 4.1, admin level 1 (63 provinces).
+
+**Data availability note**: Province-level dengue surveillance data for Vietnam is publicly available only through 2017. Post-2017 data (including the major 2019 epidemic with ~580,000 national cases) exists within the Vietnamese Ministry of Health surveillance system but is not publicly released.
 
 ## Study Design
 

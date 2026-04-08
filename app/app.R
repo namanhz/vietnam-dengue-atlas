@@ -45,6 +45,19 @@ ui <- fluidPage(
           icon.className = state === 'pause' ? 'fa fa-pause' : 'fa fa-play';
         }
       });
+
+      Shiny.addCustomMessageHandler('updatePolygonColors', function(colorMap) {
+        var map = HTMLWidgets.find('.leaflet').getMap();
+        if (!map) return;
+        map.eachLayer(function(layer) {
+          if (layer.options && layer.options.layerId != null) {
+            var id = String(layer.options.layerId);
+            if (colorMap[id]) {
+              layer.setStyle({ fillColor: colorMap[id] });
+            }
+          }
+        });
+      });
     "))
   ),
 
@@ -92,7 +105,7 @@ ui <- fluidPage(
 # --------------------------------------------------------------------------
 server <- function(input, output, session) {
 
-  selected_province <- reactiveVal(NULL)
+  selected_province <- reactiveVal("Hà Nội")
 
   # Custom play/pause animation
   playing <- reactiveVal(FALSE)
